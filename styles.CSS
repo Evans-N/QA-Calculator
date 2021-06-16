@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 100%;
+    font-family: sans-serif;
+    background-color: #faebd7;
+    margin: 0;
+}
+.brand {
+    margin-left: 32px;
+    color: #6d6655;
+}
+.brand h1 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+.brand .model {
+    font-size: 1rem;
+    font-style: italic;
+}
+.brand .orange {
+    color: #f35d36;
+}
