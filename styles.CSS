@@ -23,3 +23,16 @@ body {
 .brand .orange {
     color: #f35d36;
 }
+
+.calculator {
+    width: 300px;
+    min-height: auto;
+    background-color: #edede7;
+    margin: 100px auto 15px auto;
+    overflow: auto;
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(51, 51, 51, 0.745);
+    -webkit-box-shadow: 0px 4px 45px -11px rgba(3,3,3,1);
+    -moz-box-shadow: 0px 4px 45px -11px rgba(3,3,3,1);
+    box-shadow: 0px 4px 45px -11px rgba(3,3,3,1);
+}
