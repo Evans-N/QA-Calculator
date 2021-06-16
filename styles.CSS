@@ -57,7 +57,7 @@ body {
 .buttons-box {
     width: 240px;
     margin: auto;
-    font-size: 0;   /* remove whitespace between buttons while using display:inline-block */
+    font-size: 0;   
     padding: 30px 0;
     display: -webkit-box;
     display: -moz-box;
