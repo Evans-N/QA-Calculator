@@ -1,52 +1,43 @@
-var form = document.querySelector('.display-box')
-var getNum1 = document.getElementById('input1');
-var getNum2 = document.getElementById('input2');
-var answerHeld = document.getElementById('answer'); 
+console.log(document)
 
-function calculator(getNum1, getNum2){
-    let num1 = parseInt(getNum1.nodeValue);
-    let num2 = parseInt(getNum2.nodeValue);
-    var operatorNodeList = document.querySelectorAll('.operator');
-    var answer = 0; //parseInt(document.X.y.value);
+const calculator = {
+  displayValue: '0'
+};
 
-
-    switch(operatorNodeList.values){
-        case(operatorNodeList.values === '+'):
-            return addition();
-            break;
-        case(operatorNodeList.values === '-'):
-            return subtraction();
-            break;
-        case(operatorNodeList.values === '*'):
-            return multiplication();
-            break;
-        case(operatorNodeList.values === '/'):
-            return division();
-            break;
-        default:
-            alert('You must use either +, -, *, /');
-            break;
-    }
-
-    function addition(num1, num2) {
-        return answer = num1 + num2;
-    }
-
-    function subtraction(num1, num2) {
-        return answer = num1 - num2;
-    }
-
-    function multiplication(num1, num2) {
-        return answer = num1 * num2;
-    }
-
-    function division(num1, num2) {
-        return answer = num1 / num2;
-    }
-
-    return answerHeld.innerHTML(answer);
+function updateDisplay() {
+    const display = document.querySelector('.display');
+    display.value = calculator.displayValue;
 }
 
-getNum1.addEventListener('input', calculator(num1));
-getNum2.addEventListener('input', calculator(num2));
+var buttons = document.getElementById('buttons');
+
+buttons.addEventListener('click', e => {
+    const { target } = e;
+    if (!target.matches('button')) {
+        return;
+    }
+    if (target.classList.contains('operation')){
+        console.log('operator', target.value)
+        return;
+    }
+    if (target.classList.contains('number')){
+        console.log('number', target.value)
+        return;
+    }
+    if (target.classList.contains('clear')){
+        console.log('removed', target.value)
+        return;
+    }
+    input(target.value)
+    updateDisplay();
+    
+})
+
+function input(digit) {
+    const { displayValue } = calculator;
+
+    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+}
+
+
 
