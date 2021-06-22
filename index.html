@@ -1,67 +1,74 @@
-<!doctype html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>QA-Calcultor</title>
-  <meta name="description" content="Immediate Execution Input Method Calculator created in JavaScript and styled with custom CSS">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:image" content="https://github.com/M-Java86/QA-Calcultor">
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <main>
-
-    <!-- CALCULATOR -->
-
-    <div class="calculator">
-      <header class="brand">
-        <h1>QA-Calculator<span class="model">900 z<span class="orange"></span></span></h1>
-      </header>
-
-      <!-- DISPLAY -->
-
-      <div class="display-box">
-        <div class="display"><input type="text" readonly size="15" value="0" id="display"></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container" id="calc">
+      <h1 class="text-center">Let's Compute</h1>
+      <div class="row">
+        <div class="col-md">
+          <input
+            type="number"
+            class="form-control"
+            id="firstNum"
+            placeholder="First Number:"
+            name="firstNum"
+          />
+          <br />
+        </div>
+        <div class="col-md">
+          <input
+            type="number"
+            class="form-control"
+            id="secondNum"
+            placeholder="Second Number:"
+            name="secondNum"
+          />
+        </div>
       </div>
-
-
-      <!-- NUMBER BUTTONS -->
-
-      <div class="buttons-box" id="buttons">
-        <button class="operation" id="clearAll" value="C">C</button>
-        <button class="operation" id="ce" value="CE">CE</button>
-        <button class="operation" id="muchWow">;)</button>
-        <button class="operation" id="divide" value="/">/</button>
-        <button class="number" id="number7" value="7">7</button>
-        <button class="number" id="number8" value="8">8</button>
-        <button class="number" id="number9" value="9">9</button>
-        <button class="operation" id="multiply" value="*">x</button>
-        <button class="number" id="number4" value="4">4</button>
-        <button class="number" id="number5" value="5">5</button>
-        <button class="number" id="number6" value="6">6</button>
-        <button class="operation" id="subtract" value="-">-</button>
-        <button class="number" id="number1" value="1">1</button>
-        <button class="number" id="number2" value="2">2</button>
-        <button class="number" id="number3" value="3">3</button>
-        <button class="operation" id="add" value="+">+</button>
-        <button class="number" id="changeSign" value="-">-/+</button>
-        <button class="number" id="number0" value="0">0</button>
-        <button class="number" id="decimalPoint" value=".">.</button>
-        <button class="operation equal" id="equal" value="=">=</button>
+      <div class="row">
+        <br />
+        <div class="col-md text-center">
+          <button class="btn btn-info" id="+" onclick="add()">&plus;</button>
+          <button class="btn btn-dark" id="-" onclick="subtract()">&minus;</button>
+          <button class="btn btn-danger" id="*" onclick="multiply()" >&times;</button>
+          <button class="btn btn-secondary" id="/" onclick="divide()">&sol;</button>
+        </div>
       </div>
-
-    </div> <!-- END OF CALCULATOR -->
-  </main>
-  <footer>
-    
-    <p><span>Michelle & Nathan | Source: </span><a href="https://github.com/M-Java86/QA-Calculator" title="Source Files">GitHub</a></p>
-    <p><span>June 2021</span></p>
-  </footer>
-
-  <script src="calculator.js"></script>
-</body>
-
+      <br />
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            id="result"
+            name="result"
+            placeholder="Result"
+            disabled
+          />
+        </div>
+        <br />
+      </div>
+      <div class="row">
+        <div class="col-md text-center">
+          <br />
+          <button class="btn btn-danger" id="c" onfocus="clearValues()">Clear Values</button>
+          <button class="btn btn-warning" id="clearHistory" onclick="clearHistory()">Clear History</button>
+        </div>
+        <div id="history"></div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
